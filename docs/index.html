@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#262c3d">
+  <meta name="description" content="Demostración interactiva de consulta, simulación y restauración de precios con un catálogo ficticio.">
+  <title>Mesa de Precios · Demo</title>
+  <link rel="stylesheet" href="./assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="masthead">
+    <div class="header-inner">
+      <a class="brand" href="#catalogo"><span class="brand-mark" aria-hidden="true">$</span>Mesa de Precios</a>
+      <nav class="nav" aria-label="Vistas de la demostración">
+        <a href="#catalogo" aria-current="page">Catálogo</a>
+        <a href="#plan">Plan de cambios <span id="plan-count"></span></a>
+        <a href="#historial">Historial</a>
+        <a href="#proyecto">Proyecto</a>
+      </nav>
+      <span class="demo-label">Datos ficticios</span>
+    </div>
+  </header>
+  <main id="contenido" class="page" tabindex="-1">
+    <noscript><p>Activa JavaScript para explorar el catálogo ficticio.</p></noscript>
+  </main>
+  <footer class="footer">
+    <span>Demostración de Juan José Vallejo</span>
+    <a id="portfolio-return" href="http://localhost:41763/#proyectos" hidden>← Volver al portafolio</a>
+  </footer>
+  <p id="announcement" class="sr-only" aria-live="polite"></p>
+  <dialog id="price-dialog" aria-labelledby="edit-title">
+    <form id="price-form">
+      <h2 id="edit-title">Proponer precio</h2>
+      <p id="edit-context"></p>
+      <div class="editor-fields">
+        <div class="original"><span>Precio de referencia</span><strong id="edit-original"></strong></div>
+        <label class="field">Nuevo precio (COP)<input id="price-input" name="price" type="number" min="1" step="1" required autofocus></label>
+      </div>
+      <div class="actions">
+        <button id="cancel-edit" class="button button-secondary" type="button">Cancelar</button>
+        <button class="button button-primary" type="submit">Guardar propuesta</button>
+      </div>
+    </form>
+  </dialog>
+  <script type="module" src="./assets/app.js"></script>
+</body>
+</html>
